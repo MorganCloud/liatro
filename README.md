@@ -16,6 +16,6 @@ Prerequisites:
 
  2) Enter the main directory and run ./run.sh
 
- 3)After the deployment edit the security group inbound rule for the nodes to open port 31479.
+ 3) After the deployment edit the security group inbound rule for the nodes to open port 31479.
 
  4) Visit the address of the node and port e.g http://34.221.141.198:31479/ to verify successful deployment.

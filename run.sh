@@ -1,6 +1,6 @@
 #!/bin/bash
-path=/Users/confluencetrades/Desktop/python/liatro/amazon-eks-cluster
-creds=/Users/confluencetrades/.aws/credentials
+path=
+creds=
 #bash script
 docker build -t jenkins:liatro . && docker run  --name jenkins -it --rm -p 8080:8080 -v \
 ${path}/:/root/terraform -v \

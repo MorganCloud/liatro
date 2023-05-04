@@ -1,6 +1,8 @@
-
+import calendar
+import time
 from flask import Flask, jsonify, request
 from datetime import datetime
+
 
 now = datetime.now()
 # creating a Flask app
@@ -12,8 +14,9 @@ def home():
     if(request.method == 'GET'):
 
         data = "Automate all the things!!"
-        date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-        return jsonify({'message': data, 'timestamp': date_time})
+        current_GMT = time.gmtime()
+        ts = calendar.timegm(current_GMT)
+        return jsonify({'message': data, 'timestamp': ts})
 
 # driver function
 if __name__ == '__main__':

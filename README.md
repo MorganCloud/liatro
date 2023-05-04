@@ -10,15 +10,20 @@ Prerequistes:
 
 4)In the `amazon-eks-cluster` directory edit the main.tf file and change the following lines with values for your own aws environment : lines 6,10,21,22
 
-#Deployment steps
+# Deployment steps
 
 Deployment will be done in two steps, first building the dockerized version of the python app and uploading it to AWS ECR.
- 1) Enter the app directory and run ./ecr_commands.sh
+ 1) Enter the app directory and run `./ecr_commands.sh`
 
  The Second step is where a Jenkins server gets spun up, a job gets created and it starts the build.The build will run terraform which will build all the resources for a EKS cluster and then run a kubectl command to deploy the app to the cluster.
 
- 2) Enter the main directory and run ./run.sh
+ 2) Enter the main directory and run `./run.sh`
 
  3)After the deployment edit the security group inbound rule for the nodes to open port 31479.
 
- 4) Visit the address of the node and port e.g http://34.221.141.198:31479/ to verify successful deployment.
+# Testing
+ 1) There is a job in jenkins to do autiomated testing , so you can vist the jenkins server `http://127.0.0.1:8080/job/test/build?delay=0sec` , enter the URL and run the job.
+
+# Clean Up
+
+ 1) After deployment , clean is another jenkins job. Visit `http://127.0.0.1:8080/job/destroy/` and run the build, this will run terraform destroy on the environment.

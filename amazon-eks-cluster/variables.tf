@@ -1,8 +1,3 @@
-#variable "profile" {
-#  description = "AWS profile"
-#  type        = string
-#  default = "dev"
-#}
 
 variable "region" {
   description = "AWS region to deploy to"

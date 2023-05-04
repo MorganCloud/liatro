@@ -1,6 +1,5 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <project>
-  <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
@@ -14,15 +13,7 @@
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-cd /root/terraform &amp;&amp; terraform init &amp;&amp; terraform apply -auto-approve &amp;&amp; \
-aws eks update-kubeconfig --name liatro-eks --region us-west-2
-kubectl apply -f /root/deployment.yaml
-</command>
-      <configuredLocalRules/>
-      <unstableReturn>1</unstableReturn>
-    </hudson.tasks.Shell>
-    <hudson.tasks.Shell>
-      <command></command>
+cd /root/terraform &amp;&amp; terraform destroy -auto-approve</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

@@ -12,5 +12,7 @@ do
     echo waiting for jenkins server....
     sleep 10
 done
-java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ create-job liatro < liatro.xml && \
-java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ build liatro -w
+java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ create-job build < liatro.xml && \
+java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ create-job test < test.xml && \
+java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ create-job destroy < destroy.xml && \
+java -jar jenkins-cli.jar -s http://127.0.0.1:8080/ build build -w

@@ -1,7 +1,6 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<project>
+<?xml version="1.1" encoding="UTF-8"?><project>
   <actions/>
-  <description></description>
+  <description/>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
@@ -22,7 +21,7 @@ kubectl apply -f /root/terraform/manifest/deployment.yaml
       <unstableReturn>1</unstableReturn>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command></command>
+      <command/>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

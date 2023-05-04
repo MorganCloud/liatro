@@ -35,3 +35,13 @@ resource "aws_security_group_rule" "nodes_inbound" {
   to_port                  = 65535
   type                     = "ingress"
 }
+
+resource "aws_security_group_rule" "liatro" {
+  description              = "Allow nodes to allow traffic for liatro demo"
+  from_port                = 31479
+  protocol                 = "-1"
+  cidr_blocks              = ["0.0.0.0/0"]
+  security_group_id        = aws_security_group.eks_nodes.id
+  to_port                  = 31479
+  type                     = "ingress"
+}

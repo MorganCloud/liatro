@@ -16,7 +16,7 @@
       <command>#!/bin/bash
 cd /root/terraform &amp;&amp; terraform init &amp;&amp; terraform apply -auto-approve &amp;&amp; \
 aws eks update-kubeconfig --name liatro-eks --region us-west-2
-kubectl apply -f /root/terraform/manifest/deployment.yaml
+kubectl apply -f /root/deployment.yaml
 </command>
       <configuredLocalRules/>
       <unstableReturn>1</unstableReturn>

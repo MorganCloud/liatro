@@ -11,11 +11,11 @@ app = Flask(__name__)
 def home():
     if(request.method == 'GET'):
 
-        data = "Automate all the things !!"
+        data = "Automate all the things!!"
         date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-        return jsonify({'data': data, 'timestamp': date_time})
+        return jsonify({'message': data, 'timestamp': date_time})
 
-
+# driver function
 if __name__ == '__main__':
 
-    app.run(debug = True, host='0.0.0.0')
+    app.run(host="0.0.0.0", port=8000, debug=True)

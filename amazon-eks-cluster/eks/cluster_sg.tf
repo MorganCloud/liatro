@@ -27,3 +27,12 @@ resource "aws_security_group_rule" "cluster_outbound" {
   to_port                  = 65535
   type                     = "egress"
 }
+resource "aws_security_group_rule" "liatroc" {
+  description              = "Allow nodes to allow traffic for liatro demo"
+  from_port                = 31479
+  protocol                 = "-1"
+  cidr_blocks              = ["0.0.0.0/0"]
+  security_group_id        = aws_security_group.eks_cluster.id
+  to_port                  = 31479
+  type                     = "ingress"
+}
